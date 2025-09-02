@@ -33,7 +33,7 @@ const BlogList = () => {
     ))}
     </div>
     <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 mb-24 mx-8 sm:mx-16 x1:mx-40'>
-      {filteredBlogs().filter((blog)=> menu=="All"?true:blog.category===menu)
+      {filteredBlogs().filter((blog)=> menu=="All"?true:blog.category.toLowerCase() === menu.toLowerCase())
       .map((blog)=> <BlogCard key={blog._id} blog={blog}/>)}
     </div>
     </div>
